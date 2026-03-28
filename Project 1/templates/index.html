@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Placement Predictor</title>
+
+<style>
+
+body{
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg,#667eea,#764ba2);
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.container{
+    background:white;
+    padding:40px;
+    border-radius:12px;
+    width:350px;
+    text-align:center;
+    box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+h2{
+    margin-bottom:20px;
+}
+
+input{
+    width:90%;
+    padding:10px;
+    margin:10px 0;
+    border-radius:6px;
+    border:1px solid #ccc;
+}
+
+button{
+    width:100%;
+    padding:10px;
+    background:#667eea;
+    color:white;
+    border:none;
+    border-radius:6px;
+    font-size:16px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#5563d1;
+}
+
+.result{
+    margin-top:20px;
+    font-size:18px;
+    font-weight:bold;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Placement Predictor</h2>
+
+<form action="/predict" method="post">
+
+<input type="text" name="cgpa" placeholder="Enter CGPA" required>
+
+<input type="text" name="iq" placeholder="Enter IQ" required>
+
+<button type="submit">Predict</button>
+
+</form>
+
+<div class="result">
+{{ prediction_text }}
+</div>
+
+</div>
+
+</body>
+</html>
